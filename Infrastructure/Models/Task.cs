@@ -6,9 +6,5 @@
         public string? Name { get; set; }
         public string Description { get; set; }
         public Action<object[]> Action { get; set; } = (args) => { };
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

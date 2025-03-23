@@ -11,28 +11,14 @@ namespace TaskManager.Repositories.Functions
     /// </summary>
     internal class TasksRepository
     {
-        #region SingleTonContruction
-
-        private static readonly Lazy<TasksRepository> _instance =
-            new Lazy<TasksRepository>(
-                () => new TasksRepository(new AssemblyRepository())
-                );
-
         private readonly AssemblyRepository _assemblyRepository;
 
         // Private constructor to prevent external instantiation
-        private TasksRepository(AssemblyRepository assemblyRepository)
+        internal TasksRepository(AssemblyRepository assemblyRepository)
         {
             _assemblyRepository = assemblyRepository;
             LoadFunctionsIntoMemory();
         }
-
-        // Public accessor for the singleton instance
-        internal static TasksRepository Instance => _instance.Value;
-
-        #endregion
-
-
 
         internal List<Models.Task> Functions { get; set; } = new List<Models.Task>();
 
@@ -40,11 +26,8 @@ namespace TaskManager.Repositories.Functions
         {
             try
             {
-                //get assemblies
                 IEnumerable<Assembly> assemblies = _assemblyRepository.GetAssemblies();
-                //get public classes
                 List<TypeInfo> typeInfos = assemblies.GetPublicTypes();
-                //get public methods with entry point attribute
                 IEnumerable<MethodInfo> memeberInfos = typeInfos.GetPublicMethods();
 
                 foreach (MethodInfo methodInfo in memeberInfos)
