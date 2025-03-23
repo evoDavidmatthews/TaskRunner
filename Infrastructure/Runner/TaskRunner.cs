@@ -1,12 +1,12 @@
-﻿using TaskManager.Repositories.Functions;
-
-namespace TaskManager.Runner
+﻿namespace TaskManager.Runner
 {
+    using TaskManager.Factories;
+
     internal static class TaskRunner
     {
         internal static void Run(Guid id)
         {
-            Models.Task? function = TasksRepository.Instance.Functions.FirstOrDefault(f => f.Id == id);
+            Models.Task? function = TaskRepositoryFactory.Instantiate().Functions.FirstOrDefault(f => f.Id == id);
             if (function == null)
             {
                 Console.WriteLine($"no function found by id {id}");

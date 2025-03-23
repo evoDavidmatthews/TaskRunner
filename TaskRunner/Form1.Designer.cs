@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             DescriptionBox = new TextBox();
-            AvailableFunctionsList = new ListBox();
+            AvailableTasksList = new ListBox();
             RunButton = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
@@ -44,38 +44,34 @@
             DescriptionBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DescriptionBox.BackColor = SystemColors.Window;
             DescriptionBox.ForeColor = SystemColors.ActiveCaptionText;
-            DescriptionBox.Location = new Point(186, 20);
-            DescriptionBox.Margin = new Padding(3, 2, 3, 2);
+            DescriptionBox.Location = new Point(213, 27);
             DescriptionBox.Multiline = true;
             DescriptionBox.Name = "DescriptionBox";
-            DescriptionBox.Size = new Size(515, 319);
+            DescriptionBox.Size = new Size(588, 424);
             DescriptionBox.TabIndex = 1;
             // 
             // AvailableFunctionsList
             // 
-            AvailableFunctionsList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AvailableFunctionsList.BackColor = SystemColors.Window;
-            AvailableFunctionsList.ForeColor = SystemColors.ActiveCaptionText;
-            AvailableFunctionsList.FormattingEnabled = true;
-            AvailableFunctionsList.ItemHeight = 15;
-            AvailableFunctionsList.Location = new Point(0, 20);
-            AvailableFunctionsList.Margin = new Padding(3, 2, 3, 2);
-            AvailableFunctionsList.MaximumSize = new Size(181, 4);
-            AvailableFunctionsList.MinimumSize = new Size(4, 750);
-            AvailableFunctionsList.Name = "AvailableFunctionsList";
-            AvailableFunctionsList.Size = new Size(181, 739);
-            AvailableFunctionsList.TabIndex = 2;
-            AvailableFunctionsList.SelectedIndexChanged += AvailableFunctionsList_SelectedIndexChanged;
+            AvailableTasksList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            AvailableTasksList.BackColor = SystemColors.Window;
+            AvailableTasksList.ForeColor = SystemColors.ActiveCaptionText;
+            AvailableTasksList.FormattingEnabled = true;
+            AvailableTasksList.Location = new Point(0, 27);
+            AvailableTasksList.MaximumSize = new Size(206, 4);
+            AvailableTasksList.MinimumSize = new Size(4, 999);
+            AvailableTasksList.Name = "AvailableFunctionsList";
+            AvailableTasksList.Size = new Size(206, 984);
+            AvailableTasksList.TabIndex = 2;
+            AvailableTasksList.SelectedIndexChanged += AvailableTasksList_SelectedIndexChanged;
             // 
             // RunButton
             // 
             RunButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             RunButton.BackColor = SystemColors.Window;
             RunButton.ForeColor = SystemColors.ActiveCaptionText;
-            RunButton.Location = new Point(535, 296);
-            RunButton.Margin = new Padding(3, 2, 3, 2);
+            RunButton.Location = new Point(611, 395);
             RunButton.Name = "RunButton";
-            RunButton.Size = new Size(111, 22);
+            RunButton.Size = new Size(127, 29);
             RunButton.TabIndex = 3;
             RunButton.Text = "Run";
             RunButton.UseVisualStyleBackColor = false;
@@ -93,8 +89,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(700, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(800, 30);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -102,27 +98,26 @@
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { importToolStripMenuItem });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(37, 20);
+            toolStripMenuItem1.Size = new Size(46, 24);
             toolStripMenuItem1.Text = "File";
             // 
             // importToolStripMenuItem
             // 
             importToolStripMenuItem.Name = "importToolStripMenuItem";
-            importToolStripMenuItem.Size = new Size(180, 22);
+            importToolStripMenuItem.Size = new Size(137, 26);
             importToolStripMenuItem.Text = "import";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(menuStrip1);
             Controls.Add(RunButton);
-            Controls.Add(AvailableFunctionsList);
+            Controls.Add(AvailableTasksList);
             Controls.Add(DescriptionBox);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Task Runner";
             Load += Form1_Load;
@@ -134,7 +129,7 @@
 
         #endregion
         private TextBox DescriptionBox;
-        private ListBox AvailableFunctionsList;
+        private ListBox AvailableTasksList;
         private Button RunButton;
         private ContextMenuStrip contextMenuStrip1;
         private MenuStrip menuStrip1;
