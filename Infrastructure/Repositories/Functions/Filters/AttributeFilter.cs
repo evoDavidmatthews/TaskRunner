@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 
-namespace Infrastructure.Repositories.Functions.Filters
+namespace TaskManager.Repositories.Functions.Filters
 {
-    class AttributeFilter
+    static class AttributeFilter
     {
         private static string EntryPointAttribute = "EntryPointAttribute";
-        public static bool Criteria(CustomAttributeData ca) => ca.AttributeType.Name == EntryPointAttribute;
+        public static bool HasEntryPointAttribute(CustomAttributeData ca) => ca.AttributeType.Name == EntryPointAttribute;
     }
 }

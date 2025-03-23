@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskRunner", "TaskRunner\TaskRunner.csproj", "{0FBD9E3E-54F0-4301-A7DF-6D06B81EF58E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F4BF16FF-5851-4929-981C-994D2D3A506A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager", "Infrastructure\TaskManager.csproj", "{F4BF16FF-5851-4929-981C-994D2D3A506A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

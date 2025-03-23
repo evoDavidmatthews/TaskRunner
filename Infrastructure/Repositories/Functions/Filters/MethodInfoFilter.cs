@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 
-namespace Infrastructure.Repositories.Functions.Filters
+namespace TaskManager.Repositories.Functions.Filters
 {
-    class MethodInfoFilter
+    static class MethodInfoFilter
     {
-        public static bool Criteria(MethodInfo m) => m.IsPublic && m.CustomAttributes.Any(AttributeFilter.Criteria);
+        public static bool DeclaredMethodIsPublicAndHasEntryPointAttribute(MethodInfo m) => m.IsPublic && m.CustomAttributes.Any(AttributeFilter.HasEntryPointAttribute);
     }
 }

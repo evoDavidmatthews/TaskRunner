@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
+using static TaskManager.Repositories.Functions.Filters.AttributeFilter;
 
-namespace Infrastructure.Extensions
+namespace TaskManager.Extensions
 {
     internal static class MethodInfoExtensions
     {
@@ -11,7 +12,7 @@ namespace Infrastructure.Extensions
             object? instance = methodInfo.IsStatic ? null : Activator.CreateInstance(methodInfo.DeclaringType);
 
 
-            Action<object[]> actionDelegate = (object[] args) =>
+            Action<object[]> actionDelegate = (args) =>
             {
                 try
                 {
@@ -26,5 +27,12 @@ namespace Infrastructure.Extensions
 
             return actionDelegate;
         }
+
+        internal static CustomAttributeData? GetEntryPointAttribute(this MethodInfo methodInfo)
+        {
+            return methodInfo.CustomAttributes
+                    .FirstOrDefault(HasEntryPointAttribute);
+        }
+
     }
 }
