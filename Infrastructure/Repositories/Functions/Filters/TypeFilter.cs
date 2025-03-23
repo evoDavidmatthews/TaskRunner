@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 
-namespace Infrastructure.Repositories.Functions.Filters
+namespace TaskManager.Repositories.Functions.Filters
 {
     class TypeFilter
     {
-        public static bool Criteria(TypeInfo t) => t.IsPublic;
+        public static bool TypeInfoIsPublic(TypeInfo t) => t.IsPublic;
     }
 }
