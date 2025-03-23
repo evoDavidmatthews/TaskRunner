@@ -1,12 +1,15 @@
 ﻿namespace TaskManager.Runner
 {
-    using TaskManager.Factories;
+    using TaskManager.Interfaces;
+    using TaskManager.Repositories;
 
-    internal static class TaskRunner
+    internal class TaskRunner(TasksRepository tasksRepository) : ITaskRunner
     {
-        internal static void Run(Guid id)
+        private readonly TasksRepository _tasksRepository = tasksRepository;
+
+        public void Run(Guid id)
         {
-            Models.Task? function = TaskRepositoryFactory.Instantiate().Functions.FirstOrDefault(f => f.Id == id);
+            Models.Task? function = _tasksRepository.Functions.FirstOrDefault(f => f.Id == id);
             if (function == null)
             {
                 Console.WriteLine($"no function found by id {id}");

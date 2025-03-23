@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System.Reflection;
+using TaskManager.Interfaces;
 using TaskManager.Models;
 
 
-namespace TaskManager.Repositories.Functions
+namespace TaskManager.Repositories
 {
-    internal class AssemblyRepository
+    internal class AssemblyRepository : IAssemblyRepository
     {
-        internal IEnumerable<Assembly> GetAssemblies()
+        public IEnumerable<Assembly> GetAssemblies()
         {
             string jsonConfig = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\TaskManagement.Json");
             Config config = JsonConvert.DeserializeObject<Config>(jsonConfig) ?? new();

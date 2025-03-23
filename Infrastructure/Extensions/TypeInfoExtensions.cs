@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static TaskManager.Repositories.Functions.Filters.MethodInfoFilter;
+using static TaskManager.Repositories.Filters.MethodInfoFilter;
 
 namespace TaskManager.Extensions
 {
