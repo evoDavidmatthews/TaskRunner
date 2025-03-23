@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static TaskManager.Repositories.Functions.Filters.AttributeFilter;
+using static TaskManager.Repositories.Filters.AttributeFilter;
 
 namespace TaskManager.Extensions
 {

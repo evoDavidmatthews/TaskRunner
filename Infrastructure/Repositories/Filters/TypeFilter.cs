@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace TaskManager.Repositories.Functions.Filters
+namespace TaskManager.Repositories.Filters
 {
     class TypeFilter
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using static TaskManager.Repositories.Functions.Filters.TypeFilter;
+using static TaskManager.Repositories.Filters.TypeFilter;
 
 namespace TaskManager.Extensions
 {

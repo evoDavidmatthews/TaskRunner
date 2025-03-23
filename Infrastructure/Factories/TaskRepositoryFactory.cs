@@ -1,6 +1,7 @@
 ﻿namespace TaskManager.Factories
 {
-    using TaskManager.Repositories.Functions;
+    using TaskManager.Repositories;
+
     internal static class TaskRepositoryFactory
     {
         private static readonly Lazy<TasksRepository> _instance =

@@ -1,15 +1,14 @@
-﻿using System.Reflection;
-using TaskManager.Extensions;
-using TaskManager.Models;
-
-
-namespace TaskManager.Repositories.Functions
+﻿namespace TaskManager.Repositories
 {
+
+    using System.Reflection;
+    using TaskManager.Extensions;
+    using TaskManager.Interfaces;
 
     /// <summary>
     /// the complexity is for ensuring that the assemblies and tasks only loaded into memory once
     /// </summary>
-    internal class TasksRepository
+    internal class TasksRepository : ITasksRepository
     {
         private readonly AssemblyRepository _assemblyRepository;
 
@@ -20,7 +19,7 @@ namespace TaskManager.Repositories.Functions
             LoadFunctionsIntoMemory();
         }
 
-        internal List<Models.Task> Functions { get; set; } = new List<Models.Task>();
+        public List<Models.Task> Functions { get; set; } = new List<Models.Task>();
 
         private void LoadFunctionsIntoMemory()
         {
